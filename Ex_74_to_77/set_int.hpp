@@ -21,6 +21,9 @@ public:
     void addElement(int); //add element
     int appartient (int); //Savoir si l'entier donné lui appartient
     int cardinal (); //connaitre son nombre d'elements
+    
+    //Exercice 87
+    SetInt & operator = (SetInt &);
 };
 
 #endif /* set_int_hpp */

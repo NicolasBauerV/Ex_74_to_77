@@ -33,3 +33,15 @@ int SetInt::appartient(int nb) {
 int SetInt::cardinal() {
     return nElement;
 }
+
+SetInt & SetInt::operator=(SetInt & ent) {
+    if (this != &ent) {
+        delete adValTab;
+        adValTab = new int[NBMAX = ent.NBMAX];
+        nElement = ent.nElement;
+        for (int i = 0; i < nElement; i++) {
+            adValTab[i] = ent.adValTab[i];
+        }
+    }
+    return *this;
+}
