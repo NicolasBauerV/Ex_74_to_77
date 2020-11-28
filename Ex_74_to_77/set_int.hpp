@@ -9,7 +9,7 @@
 #define set_int_hpp
 
 #include <iostream>
-
+/*
 class SetInt {
     int *adValTab; //adresse de la valeur du tableau
     int NBMAX; //Nb max d'éléments
@@ -24,6 +24,19 @@ public:
     
     //Exercice 87
     SetInt & operator = (SetInt &);
+};
+*/
+//Exercice 88
+class SetInt {
+    int *adValTab; //adresse de la valeur du tableau
+    int NBMAX; //Nb max d'éléments
+    int nElement; //Nombre d'éléments
+    
+public:
+    SetInt(int = 20); //Constructeur
+    ~SetInt();//Destructeur
+    SetInt & operator < (int);
+    int operator [] (int);
 };
 
 #endif /* set_int_hpp */

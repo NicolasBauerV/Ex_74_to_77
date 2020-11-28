@@ -6,6 +6,7 @@
 //
 
 #include "set_int.hpp"
+/*
 SetInt::SetInt(int size) {
     adValTab = new int [NBMAX = size];
     nElement = 0;
@@ -44,4 +45,29 @@ SetInt & SetInt::operator=(SetInt & ent) {
         }
     }
     return *this;
+}
+*/
+
+SetInt::SetInt(int size) {
+    adValTab = new int [NBMAX = size];
+    nElement = 0;
+}
+
+SetInt::~SetInt() {
+    delete adValTab;
+}
+
+SetInt & SetInt::operator<(int nb) {
+    if (!(*this)[nb] && (nElement < NBMAX)) {
+        adValTab[nElement++] = nb;
+    }
+    return (*this);
+}
+
+int SetInt::operator[](int nb) {
+    int i = 0;
+    while (i < nElement && adValTab[i] != nb) {
+        i++;
+    }
+    return (i < nElement);
 }
